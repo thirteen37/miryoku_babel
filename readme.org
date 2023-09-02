@@ -105,8 +105,8 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 
 #+NAME: hold
 | BOOT     | DF(U_TAP) | DF(U_EXTRA) | DF(U_BASE) |         |       | DF(U_BASE) | DF(U_EXTRA) | DF(U_TAP) | BOOT     |
-| LGUI     | LALT      | LCTL        | LSFT       |         |       | LSFT       | LCTL        | LALT      | LGUI     |
 | U_BUTTON | ALGR      | LOCK_OPP    | LOCK_CUR   |         |       | LOCK_CUR   | LOCK_OPP    | ALGR      | U_BUTTON |
+| LALT     | LCTL      | LGUI        | LSFT       |         |       | RSFT       | RGUI        | RCTL      | RALT     |
 | U_NP     | U_NP      | U_MEDIA     | U_NAV      | U_MOUSE | U_SYM | U_NUM      | U_FUN       | U_NP      | U_NP     |
 
 
@@ -132,7 +132,7 @@ The base layer is maintained as separate tables for tap alphas, tap thumbs, and 
 
 #+NAME: button
 | U_UND | U_CUT | U_CPY | U_PST | U_RDO | U_RDO | U_PST | U_CPY | U_CUT | U_UND |
-| LGUI  | LALT  | LCTL  | LSFT  |       |       | LSFT  | LCTL  | LALT  | LGUI  |
+| LALT  | LCTL  | LGUI  | LSFT  |       |       | RSFT  | RGUI  | RCTL  | RALT  |
 | U_UND | U_CUT | U_CPY | U_PST | U_RDO | U_RDO | U_PST | U_CPY | U_CUT | U_UND |
 
 #+NAME: button-thumbs
@@ -358,8 +358,8 @@ Not available with ~MIRYOKU_LAYERS=FLIP~.
 
 #+NAME: hold-flip
 | BOOT     | DF(U_TAP) | DF(U_EXTRA) | DF(U_BASE) |       |         | DF(U_BASE) | DF(U_EXTRA) | DF(U_TAP) | BOOT     |
-| LGUI     | LALT      | LCTL        | LSFT       |       |         | LSFT       | LCTL        | LALT      | LGUI     |
 | U_BUTTON | ALGR      | LOCK_OPP    | LOCK_CUR   |       |         | LOCK_CUR   | LOCK_OPP    | ALGR      | U_BUTTON |
+| LALT     | LCTL      | LGUI        | LSFT       |       |         | RSFT       | RGUI        | RCTL      | RALT     |
 | U_NP     | U_NP      | U_FUN       | U_NUM      | U_SYM | U_MOUSE | U_NAV      | U_MEDIA     | U_NP      | U_NP     |
 
 
@@ -537,7 +537,7 @@ Modifiers usable in hold table.  Need to have the same name for ~KC_~ and ~_T~
 versions.
 
 #+NAME: mods
-| LSFT | LCTL | LALT | LGUI | ALGR |
+| LSFT | LCTL | LALT | LGUI | ALGR | RSFT | RCTL | RALT | RGUI |
 
 
 **** keycode-translation
@@ -666,7 +666,9 @@ Source keycode to implementation equivalent (source, QMK, ZMK, KMonad).
 | QUES        | QUES             | QMARK         | ?             |
 | QUOT        | QUOT             | SQT           | U_QUOT        |
 | RBRC        | RBRC             | RBKT          | ]             |
+| RALT        | RALT             | RALT          | alt           |
 | RCBR        | RCBR             | RBRC          | }             |
+| RCTL        | RCTL             | RCTRL         | ctl           |
 | RESET       |                  | &reset        |               |
 | RGB_HUI     | RGB_HUI          | U_RGB_HUI     |               |
 | RGB_MOD     | RGB_MOD          | U_RGB_EFF     |               |
@@ -674,7 +676,9 @@ Source keycode to implementation equivalent (source, QMK, ZMK, KMonad).
 | RGB_TOG     | RGB_TOG          | U_RGB_TOG     |               |
 | RGB_VAI     | RGB_VAI          | U_RGB_BRI     |               |
 | RGHT        | RGHT             | RIGHT         | right         |
+| RGUI        | RGUI             | RGUI          | met           |
 | RPRN        | RPRN             | RPAR          | U_RPRN        |
+| RSFT        | RSFT             | RSHFT         | sft           |
 | SCLN        | SCLN             | SEMI          | ;             |
 | SLCK        | SCRL             | SLCK          | slck          |
 | SLSH        | SLSH             | SLASH         | /             |
